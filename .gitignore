@@ -1,5 +1,18 @@
-bin/
-obj/
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+
+# IDE files
 .vs/
 *.user
 *.suo
+
+# Packages, environment files, and test output
+*.nupkg
+*.snupkg
+.env
+TestResults/
+coverage/
