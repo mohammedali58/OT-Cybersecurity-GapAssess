@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OT Guard | Gap Assessment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast"></div>
+    <main id="login-screen" class="login-screen">
+      <section class="login-brand">
+        <div class="brand"><span class="brand-mark">◈</span> OT GUARD</div>
+        <div>
+          <p class="eyebrow">Industrial cybersecurity</p>
+          <h1>See every gap.<br /><em>Protect what matters.</em></h1>
+          <p class="intro">A focused workspace for operational technology compliance assessments.</p>
+        </div>
+        <div class="assurance"><span>●</span> IEC 62443 aligned assessment workflow</div>
+      </section>
+      <section class="login-panel">
+        <div class="login-card">
+          <p class="eyebrow">Secure access</p>
+          <h2>Welcome back</h2>
+          <p class="muted">Sign in to your assessment workspace.</p>
+          <form id="login-form">
+            <label>Username<input id="username" value="admin" autocomplete="username" /></label>
+            <label>Password<input id="password" type="password" value="admin" autocomplete="current-password" /></label>
+            <button class="primary full" type="submit">Sign in <span>→</span></button>
+          </form>
+          <div class="demo-users"><strong>Demo accounts</strong><button data-demo="admin">admin / admin</button><button data-demo="assessor">assessor / assessor</button><button data-demo="viewer">viewer / viewer</button></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">◈</span> OT GUARD</div>
+        <div class="workspace"><span class="workspace-dot"></span><div><small>WORKSPACE</small><strong>North Plant OT</strong></div><span>⌄</span></div>
+        <nav>
+          <button class="nav-link active" data-page="dashboard"><span>▦</span> Overview</button>
+          <button class="nav-link" data-page="assessments"><span>◌</span> Assessments</button>
+          <button class="nav-link" data-page="inventory"><span>▣</span> Asset inventory</button>
+          <button class="nav-link" data-page="configuration"><span>⌘</span> Configurations</button>
+          <button class="nav-link" data-page="baseline" data-admin><span>✓</span> Baseline controls</button>
+          <button class="nav-link" data-page="results"><span>△</span> Gap results</button>
+          <button class="nav-link" data-page="reports"><span>↧</span> Reports</button>
+        </nav>
+        <div class="sidebar-bottom"><button class="help">? &nbsp; Help center</button><div class="user-card"><div class="avatar">AM</div><div><strong id="user-name">Alex Morgan</strong><small id="user-role">Administrator</small></div><button id="logout" title="Log out">↪</button></div></div>
+      </aside>
+      <section class="content">
+        <header><button id="mobile-menu" class="mobile-menu">☰</button><div id="breadcrumb">OVERVIEW</div><div class="header-actions"><button class="icon-button">⌕</button><button class="icon-button notification">♧<i></i></button></div></header>
+
+        <div id="dashboard" class="page active">
+          <div class="page-title"><div><p class="eyebrow">Assessment workspace</p><h2>Good morning, Alex <span class="wave">✦</span></h2><p class="muted">Here’s the current security posture of your OT environment.</p></div><button class="primary" data-new-assessment>+ New assessment</button></div>
+          <section class="metric-grid">
+            <article class="metric-card"><div class="metric-icon blue">▣</div><div><span>DISCOVERED ASSETS</span><strong id="asset-count">48</strong><small class="positive">↑ 6 <em>this assessment</em></small></div></article>
+            <article class="metric-card"><div class="metric-icon violet">⌘</div><div><span>NETWORK SWITCHES</span><strong id="switch-count">18</strong><small>37.5% of inventory</small></div></article>
+            <article class="metric-card"><div class="metric-icon teal">✓</div><div><span>COMPLIANCE SCORE</span><strong id="compliance-score">78<span>%</span></strong><small class="positive">↑ 4.2% <em>vs. previous</em></small></div></article>
+            <article class="metric-card"><div class="metric-icon orange">△</div><div><span>OPEN GAPS</span><strong id="gap-count">22</strong><small class="danger">8 high severity</small></div></article>
+          </section>
+          <section class="dashboard-grid">
+            <article class="panel posture"><div class="panel-head"><div><h3>Compliance posture</h3><p>Current assessment · July 2026</p></div><button class="link" data-page-link="results">View details →</button></div><div class="posture-main"><div class="score-ring"><div><strong>78<span>%</span></strong><small>COMPLIANT</small></div></div><div class="posture-legend"><div><span class="legend-dot compliant"></span><b>89</b> Compliant checks</div><div><span class="legend-dot noncompliant"></span><b>22</b> Non-compliant</div><div><span class="legend-dot na"></span><b>12</b> Not applicable</div></div></div></article>
+            <article class="panel severity"><div class="panel-head"><div><h3>Gaps by severity</h3><p>22 open findings</p></div></div><div class="severity-bars"><div><span>Critical</span><div><i style="width:18%"></i></div><b>2</b></div><div><span>High</span><div><i style="width:65%"></i></div><b>8</b></div><div><span>Medium</span><div><i style="width:92%"></i></div><b>10</b></div><div><span>Low</span><div><i style="width:24%"></i></div><b>2</b></div></div></article>
+          </section>
+          <section class="panel recent"><div class="panel-head"><div><h3>Recent assessments</h3><p>Latest security posture snapshots</p></div><button class="link" data-page-link="assessments">View all →</button></div><table><thead><tr><th>ASSESSMENT</th><th>BASELINE</th><th>ASSETS</th><th>COMPLIANCE</th><th>STATUS</th><th></th></tr></thead><tbody id="recent-assessments"></tbody></table></section>
+        </div>
+
+        <div id="assessments" class="page"><div class="page-title"><div><p class="eyebrow">Assessment management</p><h2>Assessments</h2><p class="muted">Create, track, and revisit compliance reviews.</p></div><button class="primary" data-new-assessment>+ New assessment</button></div><section class="panel"><table><thead><tr><th>ASSESSMENT</th><th>CREATED</th><th>BASELINE</th><th>ASSETS</th><th>SCORE</th><th>STATUS</th></tr></thead><tbody id="all-assessments"></tbody></table></section></div>
+
+        <div id="inventory" class="page"><div class="page-title"><div><p class="eyebrow">Step 1 of 4</p><h2>Asset inventory</h2><p class="muted">Upload an inventory to discover OT assets and identify network switches.</p></div><label class="primary upload-label" data-assessor>↑ Upload inventory<input id="inventory-file" type="file" accept=".xlsx,.xls,.csv" hidden /></label></div><section class="upload-zone" id="inventory-drop"><div class="upload-symbol">⇧</div><h3>Drop an inventory file here</h3><p>Excel (.xlsx, .xls) or CSV · Maximum file size 25 MB</p><label class="secondary">Choose file<input type="file" accept=".xlsx,.xls,.csv" hidden /></label></section><section class="panel table-panel"><div class="panel-head"><div><h3>Detected assets <span class="count-pill" id="inventory-total">48</span></h3><p>Automatically classified from the latest inventory.</p></div><div class="filter-row"><input placeholder="Search assets" /><button class="secondary">Filter ▾</button></div></div><table><thead><tr><th>ASSET NAME</th><th>TYPE</th><th>MODEL</th><th>IP ADDRESS</th><th>SITE</th><th>PORT / VLAN</th><th>STATUS</th></tr></thead><tbody id="asset-table"></tbody></table></section></div>
+
+        <div id="baseline" class="page"><div class="page-title"><div><p class="eyebrow">Control library</p><h2>Baseline controls</h2><p class="muted">Active baseline version <strong>v2.4 · IEC 62443 Switch Hardening</strong></p></div><label class="primary upload-label" data-admin>↑ Upload baseline<input id="baseline-file" type="file" accept=".xlsx,.xls,.csv" hidden /></label></div><section class="panel table-panel"><div class="panel-head"><div><div><h3>IEC 62443 Switch Hardening <span class="active-pill">ACTIVE</span></h3><p>Version 2.4 · 123 controls · Last updated Jul 08, 2026</p></div><button class="secondary" data-admin>Version history</button></div><table><thead><tr><th>CONTROL ID</th><th>REQUIREMENT</th><th>EXPECTED CONFIGURATION</th><th>SEVERITY</th><th>ASSET TYPE</th><th>RECOMMENDATION</th></tr></thead><tbody id="baseline-table"></tbody></table></section></div>
+
+        <div id="configuration" class="page"><div class="page-title"><div><p class="eyebrow">Step 2 of 4</p><h2>Switch configurations</h2><p class="muted">Map each configuration export to its corresponding network switch.</p></div><label class="primary upload-label" data-assessor>↑ Upload configs<input id="config-file" type="file" accept=".txt,.cfg,.conf" multiple hidden /></label></div><section class="config-summary"><div><span>18</span><p>Switches in inventory</p></div><div><span id="mapped-count">12</span><p>Configurations mapped</p></div><div><span id="pending-count">6</span><p>Awaiting configuration</p></div></section><section class="panel table-panel"><div class="panel-head"><div><h3>Configuration mapping</h3><p>Uploaded configuration files are parsed automatically.</p></div><button class="secondary" id="auto-map" data-assessor>⌁ Auto-map files</button></div><table><thead><tr><th>SWITCH NAME</th><th>MODEL</th><th>IP ADDRESS</th><th>UPLOADED CONFIG FILE</th><th>STATUS</th><th></th></tr></thead><tbody id="config-table"></tbody></table></section><div class="action-footer"><span>Once all files are mapped, run the assessment to compare each switch against the active baseline.</span><button class="primary" id="run-assessment" data-assessor>Run gap assessment →</button></div></div>
+
+        <div id="results" class="page"><div class="page-title"><div><p class="eyebrow">Assessment #OT-2026-0714</p><h2>Gap assessment results</h2><p class="muted">North Plant OT · IEC 62443 Switch Hardening v2.4</p></div><button class="secondary" data-page-link="reports">↓ Download report</button></div><section class="results-summary"><div><span>123</span><p>Controls evaluated</p></div><div><span class="green">89</span><p>Compliant</p></div><div><span class="red">22</span><p>Non-compliant</p></div><div><span class="gray">12</span><p>Not applicable</p></div><div><span>78%</span><p>Compliance score</p></div></section><section class="panel table-panel"><div class="panel-head"><div><h3>Detailed findings</h3><p>Configuration comparison against active security baseline.</p></div><div class="filter-row"><select id="result-filter"><option value="all">All statuses</option><option value="Non-Compliant">Non-compliant</option><option value="Compliant">Compliant</option></select><button class="secondary">Filter ▾</button></div></div><div class="scroll-table"><table><thead><tr><th>CONTROL ID</th><th>REQUIREMENT</th><th>ASSET NAME</th><th>CURRENT CONFIG</th><th>EXPECTED BASELINE</th><th>STATUS</th><th>SEVERITY</th><th>RECOMMENDATION</th></tr></thead><tbody id="results-table"></tbody></table></div></section></div>
+
+        <div id="reports" class="page"><div class="page-title"><div><p class="eyebrow">Assessment #OT-2026-0714</p><h2>Reports & exports</h2><p class="muted">Create shareable, evidence-based compliance reports.</p></div></div><section class="report-hero"><div><p class="eyebrow">READY TO EXPORT</p><h2>North Plant OT Security<br />Gap Assessment</h2><p>Generated from 48 assets, 18 switches, and 123 evaluated controls.</p><div class="report-meta"><span>July 14, 2026</span><span>•</span><span>Baseline v2.4</span><span>•</span><span>78% compliant</span></div></div><div class="report-score"><strong>78<small>%</small></strong><span>COMPLIANCE SCORE</span></div></section><section class="report-grid"><article class="report-card"><div class="file-icon excel">▦</div><h3>Excel assessment workbook</h3><p>Executive summary, asset inventory, detailed findings, and recommendations across separate worksheets.</p><button class="primary full" id="download-excel">↓ Download Excel (.csv)</button></article><article class="report-card"><div class="file-icon pdf">▤</div><h3>PDF executive report</h3><p>Presentation-ready overview with posture charts, severity breakdown, and prioritized remediation actions.</p><button class="secondary full" id="download-pdf">↓ Print / Save as PDF</button></article></section><section class="panel included"><h3>Included in every report</h3><div><span>✓ Executive summary</span><span>✓ Asset and switch inventory</span><span>✓ Compliance metrics</span><span>✓ Detailed gap register</span><span>✓ Severity analysis</span><span>✓ Remediation recommendations</span></div></section></div>
+      </section>
+    </div>
+    <div id="assessment-modal" class="modal hidden"><div class="modal-card"><button class="close-modal">×</button><p class="eyebrow">New assessment</p><h2>Start a security review</h2><p class="muted">A guided workflow will take you from inventory upload to an exportable report.</p><label>Assessment name<input id="assessment-name" value="North Plant OT — July 2026" /></label><label>Baseline<select><option>IEC 62443 Switch Hardening v2.4</option></select></label><button class="primary full" id="create-assessment">Create assessment →</button></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
